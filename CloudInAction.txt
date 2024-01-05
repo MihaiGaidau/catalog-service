@@ -1,0 +1,29 @@
+gradle:
+ ./gradlew bootRun   run app
+ ./gradlew test  run tests
+./gradlew bootBuildImage  buid docker image
+
+
+docker images -> see docker images
+docker run --rm --name catalog-service -p 8080:8080 catalog-service:0.0.1-SNAPSHOT  -> runs the catalog-service on port 8080 -rm for removing the container after executions completes
+
+
+minikube start -> start the kubernetes 
+minikube stop -> stops the kubernetes
+minikube delete -> delete the kubernetes
+minikube image load <<dockerImage:version>> -> imports the docker image into kubernetes
+
+
+kubectl create deployment catalog-service --image=catalog-service:0.0.1-SNAPSHOT -> create a deployment resource based of the image loaded
+kubectl get deployment -> see the deployment
+kubectl get pod -> see the pod of the deployment
+kubectl logs deployment/catalog-service -> check logs 
+
+kubectl expose deployment catalog-service --name=catalog-service --port=8080 -> exposes a kube resource of the deployment type of the name catalog-service with the a specific service name and on a specific port
+kubectl expose deployment catalog-service --name=catalog-service --port=8080 -> check the exposed service ( the service is exposed to other componets inside the cluster)
+
+kubectl port-forward service/catalog-service 8000:8080 -> port forward to expose a service on a local port from the cluster intern port
+
+kubectl delete service catalog-service
+kubectl delete deployment catalog-service
+
