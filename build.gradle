@@ -6,10 +6,9 @@ plugins {
 
 group = 'com.polarbookshop'
 version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '21'
 
-java {
-    sourceCompatibility = '21'
-}
+description = 'Provides functionality for managing the books in the catalog.'
 
 repositories {
     mavenCentral()
@@ -55,6 +54,11 @@ dependencyManagement {
         mavenBom "org.testcontainers:testcontainers-bom:${testcontainersVersion}"
 
     }
+}
+
+bootBuildImage {
+    imageName = "${project.name}"
+    environment = ["BP_JVM_VERSION" : "21.*"]
 }
 
 tasks.named('test') {
