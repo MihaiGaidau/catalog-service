@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
         - name: catalog-service
-          image: ghcr.io/mihaigaidau/catalog-service:latest
+#          image: ghcr.io/mihaigaidau/catalog-service:latest
 #          image: docker.io/library/catalog-service:latest
-#          image: catalog-service
+          image: catalog-service
           imagePullPolicy: IfNotPresent
           lifecycle:
             preStop:
