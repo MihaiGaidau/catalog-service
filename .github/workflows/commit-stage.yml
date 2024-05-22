@@ -43,8 +43,9 @@ jobs:
         with:
           kubectl: latest
           kubeconform: latest
-          run: |
-            kubeconform -strict -verbose k8s/
+      - name: Run Validations kubernates manifest
+        run: |
+          kubeconform -strict -verbose k8s/
   package:
     name: Package and Publish
     if: ${{ github.ref == 'refs/heads/main' }}
