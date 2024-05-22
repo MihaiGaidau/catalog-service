@@ -28,5 +28,5 @@ spec:
               value: jdbc:postgresql://polar-postgres/polardb_catalog
             - name: SPRING_PROFILES_ACTIVE
               value: testdata
-            - name: SPRINT_CLOUD_CONFIG_FAIL_FAST
-              value: "false"
+#            - name: SPRINT_CLOUD_CONFIG_FAIL_FAST
+#              value: "false"
